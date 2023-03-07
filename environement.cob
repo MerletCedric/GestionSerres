@@ -139,4 +139,7 @@
                 OPEN OUTPUT FCompatibilites
                 END-IF
         CLOSE FCompatibilites
+        PERFORM afficher_plantes
+        PERFORM ajouter_plante
         STOP RUN.
+        COPY "plantes.cpy".
