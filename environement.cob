@@ -68,7 +68,7 @@
 
         FD FSerres.
         01 tamp_fSerres.
-                02 fs_nomSerre PIC 9(3).
+                02 fs_nomSerre PIC A(20).
                 02 fs_idUtilisateur PIC 9(3).
                 02 fs_humidite PIC A(10).
                 02 fs_exposition PIC A(20).
@@ -107,6 +107,12 @@
         77 soleil PIC A(20).
         77 sol PIC A(20).
         77 description PIC A(255).
+        77 exposition PIC A(20).
+        77 humidite PIC A(10).
+        77 nbZones PIC 9(2).
+        77 choix PIC 9(1).
+        77 id_uti PIC 9(3).
+        77 i PIC 9(2).
 
         PROCEDURE DIVISION.
 
@@ -140,6 +146,9 @@
                 END-IF
         CLOSE FCompatibilites
         PERFORM afficher_plantes
-        PERFORM ajouter_plante
+        MOVE 1 TO id_uti
+        PERFORM afficher_serres
+        PERFORM ajouter_serre
         STOP RUN.
         COPY "plantes.cpy".
+        COPY "serres.cpy".
