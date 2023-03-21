@@ -51,7 +51,7 @@
                 " ajouter Ã  cette serre ? : "
         ACCEPT nbZones
         MOVE 0 TO choix
-        DISPLAY "Voulez-vous re serre ?"
+        DISPLAY "Voulez-vous créer serre ?"
            "oui:1 non:2"
 
         PERFORM ajouter_zone
@@ -95,5 +95,6 @@
 
 
         ajouter_zone.
+
            DISPLAY sol
         .
